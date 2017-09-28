@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>heart-shaped + radial-gradient</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type="text/css">
+    /*默认径向渐变样式*/
+    .article .love_box{
+        border-radius:36px;cursor:pointer;height: 72px;margin:0 auto;width:72px;
+        background: radial-gradient(circle, #FFE725, #FFCA11); 
+    }
+    /*被选中时替换径向渐变颜色*/
+    .article .love_box.on{background: radial-gradient(circle, #F8F8FA,#F8F8FA);} 
+    
+    /*默认心形颜色*/
+    .love_box .love_con{background:#fff;height:12px;position:relative;top:32px;margin:0 auto;width:12px;transform:rotate(45deg);}
+    .love_box .love_con:before{background:#fff;border-radius:50%;content:'';position:absolute;left:-6px;bottom:0;height:11px;width:11px;}
+    .love_box .love_con:after{background:#fff;border-radius:50%;content:'';position:absolute;right:0px;top:-6px;height:11px;width:11px;}
+    /*鼠标滑过改变心形颜色*/
+    .love_box .love_con:hover,.love_con:hover:before,.love_con:hover:after{background:red}
+
+    /*被选中时，心形颜色与被滑过颜色一致*/
+    .love_box.on .love_con{background:red;}
+    .love_box.on .love_con:before{background:red;}
+    .love_box.on .love_con:after{background:red;}
+    
+    </style>
+</head>
+
+<body>
+    <div class="love_box"><!-- 添加class=‘on’为被选中状态 -->
+        <div class="love_con"></div>
+    </div>
+</body>
+</html>
